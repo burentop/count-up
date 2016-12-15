@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Count Up</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Count Up to the Max!</h1>
+        <p>Enter the max and multiple, and let us do the rest!</p>
+      </div>
+      <div>
+        <form>
+          <div class="form-group">
+            <label for="max">Enter the max to count to:</label>
+            <input id="max" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="multiple">Enter the multiple to count by:</label>
+            <input id="multiple" class="form-control" />
+          </div>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+      <p></p>
+      <div class="well result">
+        <h4 id="count-list"></h4>
+      </div>
+    </div>
+  </body>
+</html>
