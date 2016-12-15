@@ -19,7 +19,23 @@ $(document).ready(function () {
     event.preventDefault();
     var max = parseInt($("#max").val());
     var multiple = parseInt($("#multiple").val());
-    $("#count-list").text(toString(countUp(max, multiple)));
-    $(".result").show();
+    if ((max && multiple) && (max > 0 && multiple > 0) && (max > multiple)) {
+      $("#count-list").text(toString(countUp(max, multiple)));
+      $(".result").show();
+    } else {
+      if (!max || max < 0) {
+        $("#max-group").addClass("has-error");
+        $("#max-help").text("Please enter a valid, non-negative max.");
+      }
+      if (!multiple || multiple < 0) {
+        $("#multiple-group").addClass("has-error");
+        $("#multiple-help").text("Please enter a valid, non-negative multiple.");
+      }
+      if (max < multiple) {
+        $("#max-group").addClass("has-error");
+        $("#max-help").text("Please enter a max that is greater than the multiple!");
+      }
+    }
+    
   });
 });
